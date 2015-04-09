@@ -7,5 +7,6 @@ bootstrap/images/
 bootstrap/fonts/
 /bower_components/
 /node_modules/disc
+index.html
 _img
 _fonts
