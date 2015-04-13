@@ -1,4 +1,26 @@
 <?php
+require ('mysqli_connect.php');
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+     $errors = array(); //Start an errors array
+     //Trim and cleanup input fields
+     $unme = trim($_POST['firstname']);
+     //Strip HTML tags, apply escaping
+     $stripped = mysqli_real_escape_string($dbcon, strip_tags($unme));
+     //Get string lengths
+     $strLen = mb_strlen($stripped, 'utf8');
+    //Check stripped string
+    if( $strLen < 1 ) {
+        $errors[] = 'Please enter your first name.';
+    }else{
+    $uname = $stripped;
+    }
+ }
+if (empty($errors)) { //If there are no errors, register the user in the database
+    //Make the query
+    $q = "INSERT INTO members (
+?>
+
+<?php
 //Connection to database.
 $connect = mysqli_connect("localhost","admin","instructor","phprediscography");
 //Send form data to database.
