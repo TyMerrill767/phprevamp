@@ -12,12 +12,9 @@ require ('mysqli_connect.php');
     if( $strLen < 1 ) {
         $errors[] = 'Please enter your first name.';
     }else{
-    $uname = $stripped;
+    $firstname = $stripped;
     }
  }
-if (empty($errors)) { //If there are no errors, register the user in the database
-    //Make the query
-    $q = "INSERT INTO members (
 ?>
 
 <?php
