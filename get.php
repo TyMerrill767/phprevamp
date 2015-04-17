@@ -9,7 +9,10 @@
 	mysql_select_db("phprediscography") or die(mysql_error());
 
 	// SQL query
-	$strSQL = "SELECT coverart FROM albums";
+	$strSQL = "SELECT *
+    FROM albums
+    JOIN tracks
+    ON albums.albumID=tracks.albumID";
 
 	// Execute the query (the recordset $rs contains the result)
 	$rs = mysql_query($strSQL);
@@ -19,7 +22,9 @@
 	while($row = mysql_fetch_array($rs)) {
 
 	   // Write the value of the column FirstName (which is now in the array $row)
-      echo $row['coverart'] . "<br />";
+       //echo '<img src='.$row['coverart'] . '>';
+       //echo $row['albumname'] . "<br />";
+       //echo $row['trackname'] . "<br />";
 	  }
 
 	// Close the database connection
