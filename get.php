@@ -23,7 +23,7 @@
 
 	   // Write the value of the column FirstName (which is now in the array $row)
        //echo '<img src='.$row['coverart'] . '>';
-        echo $row['albumname'] . "<br />";
+       echo $row['albumname'] . "<br />";
        echo $row['trackname'] . "<br />";
 	  }
 
