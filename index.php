@@ -145,40 +145,51 @@
 <!--MAILING LIST FORM-->
 
         <div class="col-md-12 form">
-            <a name="mail"></a>
-            <form class="form-container">
-            <div><h2  class="form-header">Sign up for our mailing list</h2></div>
-            <div class="form-title">First Name</div>
-            <input class="form-field" type="text" name="firstname" /><br />
-            <div class="form-title">Last Name</div>
-            <input class="form-field" type="text" name="lastname" /><br />
-            <div class="form-title">Address</div>
-            <input class="form-field" type="text" name="address" /><br />
-            <div class="form-title">City</div>                  <!--float?-->
-            <input class="form-field" type="text" name="city" /><br />
-            <div class="form-title">State</div>
-            <input class="form-field" type="text" name="state" /><br />
-            <div class="form-title">Zip Code</div>
-            <input class="form-field" type="text" name="zip" /><br />
-            <div class="form-title">Email</div>
-            <input class="form-field" type="text" name="email" /><br />
-            <div class="form-title">Email Preference     <!--radio buttons-->
-                <div class="form-radio">
-                    <input class="" type="radio" value="HTML" name="email-pref" /> HTML
-                </div>
-                <div class="form-radio">
-                    <input class="form-radio" type="radio" value="Plain Text" name="email-pref" /> Plain Text
-                </div>
-            </div>
-            <br>
-            <div class="form-title">Birthday</div>
-            <input class="bday-field" type="date" name="bday" /><br />
-            <div class="form-title">Comments:</div>              <!--text form-->
-            <textarea class="comment-field" rows="5" type="textarea" name="comment"></textarea><br />
+            <form action="maillist.php" class="form-container" method="post">
+                <div><h2  class="form-header">Sign up for our mailing list</h2></div>
 
-            <div class="submit-container">
-                <input class="submit-button" type="submit" value="Submit" />
-            </div>
+                <label class="form-title" for="firstnamefield">First Name</label>
+                <input class="form-field" type="text" name="firstname"><br />
+
+                <label class="form-title" for="lastnamefield">Last Name</label>
+                <input class="form-field" type="text" name="lastname"><br />
+
+                <label class="form-title" for="addressfield">Address</label>
+                <input class="form-field" type="text" name="address"><br />
+
+                <label class="form-title" for="cityfield">City</label>
+                <input class="form-field" type="text" name="city"><br />
+
+                <label class="form-title" for="statefield">State</label>
+                <input class="form-field" type="text" name="state"><br />
+
+                <label class="form-title" for="zipfield">Zip</label>
+                <input class="form-field" type="text" name="zip"><br />
+
+                <label class="form-title" for="emailfield">Email</label>
+                <input class="form-field" type="email" name="email"><br />
+
+                <label class="form-title">Email Preference</label>
+                    <div class="form-radio">
+                        <input id="htmlbutton" type="radio" name="emailpref" value="HTML" checked>
+                        <label for="htmlbutton">HTML</label>
+                    </div>
+
+                    <div class="form-radio">
+                        <input id="plaintextbutton" type="radio" name="emailpreference" value="Plain Text">
+                        <label for="plaintextbutton">Plain Text</label>
+                    </div>
+
+                <label class="form-title" for="dobfield">Date of Birth</label>
+                <input class="form-field" type="date" name="dob"><br />
+
+                <label class="form-title" for="comments">Comments</label>
+                <textarea class="comment-field" name="comment" id="" rows="5"></textarea>
+
+                <div class="submit-container">
+                <input class="submit-button" type="submit" value="Sign Up!">
+                </div>
+
             </form>
         </div>
     <?php include('includes/footer.php'); ?>
