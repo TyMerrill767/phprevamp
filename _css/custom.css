@@ -254,6 +254,9 @@ div div h2  {
 
 .form-title {
     color: #ffffff;
+    display: block;
+    font-size: 1em;
+    margin: .8em 0 0;
     margin-bottom: .25em;
     text-shadow: #454545 0 1px 0;
 }
