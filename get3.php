@@ -8,14 +8,14 @@
 	mysql_select_db("phprediscography") or die(mysql_error());
 
 	// SQL query
-	$q = "SELECT *
+	$q = "SELECT DISTINCT *
     FROM albums
     JOIN tracks
     ON albums.albumID=tracks.albumID";
-    $t = "SELECT trackname FROM tracks WHERE Album_id = 1";
-    $b = "SELECT trackname FROM tracks WHERE Album_id = 2";
-    $n = "SELECT trackname FROM tracks WHERE Album_id = 3";
-    $r = "SELECT trackname FROM tracks WHERE Album_id = 4";
+    $t = "SELECT trackname FROM tracks WHERE albumID = 1";
+    $b = "SELECT trackname FROM tracks WHERE albumID = 2";
+    $n = "SELECT trackname FROM tracks WHERE albumID = 3";
+    $r = "SELECT trackname FROM tracks WHERE albumID = 4";
     $result = mysqli_query($dbcon, $q);
     $result1 = mysqli_query($dbcon, $t);
     $result2 = mysqli_query($dbcon, $b);
@@ -25,9 +25,12 @@
     {
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
         {
-               if($row['albumID']==1){
-                    foreach($result1 as $row1) {
-                        //echo '<img src='.$row['coverart'] . '>';
+            echo '<div class="col-small-6 col-med-6 col-lg-4 albumContainer">';
+            echo $row['albumname'] . "<br />";
+               if($row['albumID']==1)
+               {
+                    foreach ($result1 as $row1)
+                    {
                         //echo $row['albumname'] . "<br />";
                         echo '<li>' . $row1['trackname'] . '</li>';
                     }
