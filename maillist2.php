@@ -15,6 +15,7 @@ if( $strLen < 1 ) {
     $errors[] = 'Please enter your first name.';
 }else{
 $firstname = $stripped;
+$firstname = preg_replace("/[^a-z]+/i", "", $firstname);
 }
     if(empty($errors)) {
     mysqli_query($connect, "INSERT INTO members (fname, lname, address, city, state, zipcode, email, emailpref, dob, comment)
