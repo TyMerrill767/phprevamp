@@ -18,7 +18,7 @@ $firstname = $stripped;
 }
     if(empty($errors)) {
     mysqli_query($connect, "INSERT INTO members (fname, lname, address, city, state, zipcode, email, emailpref, dob, comment)
-    VALUES ('$_POST[firstname]', '$_POST[lastname]', '$_POST[address]', '$_POST[city]', '$_POST[state]', '$_POST[zip]', '$_POST[email]', '$_POST[emailpref]', '$_POST[dob]', '$_POST[comment]')");
+    VALUES ('$firstname', '$_POST[lastname]', '$_POST[address]', '$_POST[city]', '$_POST[state]', '$_POST[zip]', '$_POST[email]', '$_POST[emailpref]', '$_POST[dob]', '$_POST[comment]')");
     } else {
         echo'<h2>Error!</h2>
         <p class="error">The following error(s) occurred:<br />';
