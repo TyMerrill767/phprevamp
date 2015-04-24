@@ -173,7 +173,9 @@
                     <div class="form-radio">
                         <input id="htmlbutton" type="radio" name="emailpref" value="HTML">
                         <label for="htmlbutton">HTML</label>
+                    </div>
 
+                    <div class="form-radio">
                         <input id="plaintextbutton" type="radio" name="emailpref" value="Plain Text">
                         <label for="plaintextbutton">Plain Text</label>
                     </div>
