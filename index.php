@@ -145,7 +145,7 @@
 <!--MAILING LIST FORM-->
 
         <div class="col-md-12 form">
-            <form action="maillist.php" class="form-container" method="post">
+            <form action="maillist2.php" class="form-container" method="post">
                 <div><h2  class="form-header">Sign up for our mailing list</h2></div>
 
                 <label class="form-title" for="firstnamefield">First Name</label>
@@ -171,12 +171,10 @@
 
                 <label class="form-title">Email Preference</label>
                     <div class="form-radio">
-                        <input id="htmlbutton" type="radio" name="emailpref" value="HTML" checked>
+                        <input id="htmlbutton" type="radio" name="emailpref" value="HTML">
                         <label for="htmlbutton">HTML</label>
-                    </div>
 
-                    <div class="form-radio">
-                        <input id="plaintextbutton" type="radio" name="emailpreference" value="Plain Text">
+                        <input id="plaintextbutton" type="radio" name="emailpref" value="Plain Text">
                         <label for="plaintextbutton">Plain Text</label>
                     </div>
 
