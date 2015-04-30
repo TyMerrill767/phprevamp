@@ -157,7 +157,7 @@ div div h2  {
 
 /*-------------------------- MAILING FORM STYLES --------------------------*/
 
-.form   {
+.form {
     background-image: url(../_img/daft_punk-bg.jpg);
     background-size: cover;
     text-align: center;
@@ -323,10 +323,17 @@ div div h2  {
     text-shadow: #ffffff 0 1px 0;
 }
 
-.warning-message{
+.form-information{
     color: #fff;
     font-size: .9em;
+    line-height: .001em;
     text-align: center;
+}
+.thank-you{
+    background: #000;
+}
+.thank-you-msg{
+    top: 250px;
 }
 /*-------------------------- FOOTER STYLES --------------------------*/
 

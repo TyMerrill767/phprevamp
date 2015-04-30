@@ -125,16 +125,63 @@ $comment = $stripped;
     if(empty($errors)) {
     mysqli_query($connect, "INSERT INTO members (fname, lname, address, city, state, zipcode, email, emailpref, dob, comment)
     VALUES ('$firstname', '$lastname', '$address', '$city', '$state', '$zip', '$email', '$_POST[emailpref]', '$dob', '$comment')");
-    /*$to = "tyler_merrill2011@hotmail.com";
-    $subject = "New Subscriber";
-    $message = "New subscriber information: <br />"
-            //$firstname . "<br />" . $lastname . "<br />" . $address . "<br />" . $city . "<br />" . $state . "<br />" . $zip . "<br />" . $email . "<br />" . $_POST[emailpref] . "<br />" . $dob . "<br /" . $comment;*/
+    header("location: thank-you-page.php");
     } else {
-        echo'<h2>Error!</h2>
-        <p class="error">The following error(s) occurred:<br />';
+        echo'<p class="error">The following error(s) occurred:<br />';
         foreach ($errors as $msg) {
             echo " - $msg<br />\n";
         }
     }
 }
 ?>
+
+
+        <div class="col-md-12 form">
+            <form action="index.php" class="form-container" method="post">
+                <div><h2  class="form-header">Sign up for our mailing list</h2></div>
+                <p class="form-information">Required fields are marked with an asterisk(*).</p>
+
+                <label class="form-title" for="firstnamefield">*First Name</label>
+                <input class="form-field" type="text" name="firstname" value="<?php if (isset($_POST['firstname'])) echo $_POST['firstname']; ?>"><br />
+
+                <label class="form-title" for="lastnamefield">*Last Name</label>
+                <input class="form-field" type="text" name="lastname" value="<?php if (isset($_POST['lastname'])) echo $_POST['lastname'];?>"><br />
+
+                <label class="form-title" for="addressfield">*Address</label>
+                <input class="form-field" type="text" name="address" value="<?php if (isset($_POST['address'])) echo $_POST['address']; ?>"><br />
+
+                <label class="form-title" for="cityfield">*City</label>
+                <input class="form-field" type="text" name="city" value="<?php if (isset($_POST['city'])) echo $_POST['city']; ?>"><br />
+
+                <label class="form-title" for="statefield">*State</label>
+                <input class="form-field" type="text" name="state" value="<?php if (isset($_POST['state'])) echo $_POST['state']; ?>"><br />
+
+                <label class="form-title" for="zipfield">*Zip</label>
+                <input class="form-field" type="text" name="zip" value="<?php if (isset($_POST['zip'])) echo $_POST['zip']; ?>"><br />
+
+                <label class="form-title" for="emailfield">*Email</label>
+                <input class="form-field" type="email" name="email" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>"><br />
+
+                <label class="form-title">Email Preference</label>
+                    <div class="form-radio">
+                        <input id="htmlbutton" type="radio" name="emailpref" value="HTML" checked>
+                        <label for="htmlbutton">HTML</label>
+                    </div>
+
+                    <div class="form-radio">
+                        <input id="plaintextbutton" type="radio" name="emailpref" value="Plain Text">
+                        <label for="plaintextbutton">Plain Text</label>
+                    </div>
+
+                <label class="form-title" for="dobfield">*Date of Birth</label>
+                <input class="form-field" type="date" name="dob" value="<?php if (isset($_POST['dob'])) echo $_POST['dob']; ?>">><br />
+
+                <label class="form-title" for="comments">Comments</label>
+                <textarea class="comment-field" name="comment" id="" rows="5" value="<?php if (isset($_POST['comment'])) echo $_POST['comment']; ?>"></textarea>
+
+                <div class="submit-container">
+                <input class="submit-button" type="submit" value="Sign Up!">
+                </div>
+
+            </form>
+        </div>
