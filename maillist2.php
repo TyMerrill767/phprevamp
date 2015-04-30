@@ -98,9 +98,7 @@ $errors[] = 'You forgot to enter your email address.';
 //Remove spaces from beginning and end of the email address and validate it
 if (filter_var((trim($_POST['email'])), FILTER_VALIDATE_EMAIL)) {
 //A valid email address is then registered
-$e = mysqli_real_escape_string($connect, (trim($_POST['email'])));
-$email = $stripped;
-$email = preg_replace("/\D/", "", $email);
+$email = mysqli_real_escape_string($connect, (trim($_POST['email'])));
 }else{
 $errors[] = 'Your email is not in the correct format.';
 }
@@ -117,9 +115,15 @@ if( $strLen < 1 ) {
 $dob = $stripped;
 }
 
+$cm = trim($_POST['comment']);
+// Strip HTML tags and apply escaping
+$stripped = mysqli_real_escape_string($connect, strip_tags($cm));
+// Get string lengths
+$comment = $stripped;
+
     if(empty($errors)) {
     mysqli_query($connect, "INSERT INTO members (fname, lname, address, city, state, zipcode, email, emailpref, dob, comment)
-    VALUES ('$firstname', '$lastname', '$address', '$city', '$state', '$zip', '$email', '$_POST[emailpref]', '$dob', '$_POST[comment]')");
+    VALUES ('$firstname', '$lastname', '$address', '$city', '$state', '$zip', '$email', '$_POST[emailpref]', '$dob', '$comment')");
     } else {
         echo'<h2>Error!</h2>
         <p class="error">The following error(s) occurred:<br />';
