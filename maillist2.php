@@ -113,6 +113,7 @@ if( $strLen < 1 ) {
     $errors[] = 'Please enter your date of birth.';
 }else{
 $dob = $stripped;
+$dob = date('Y-m-d', strtotime(str_replace('-', '/', $dob)));
 }
 
 $cm = trim($_POST['comment']);
@@ -124,6 +125,10 @@ $comment = $stripped;
     if(empty($errors)) {
     mysqli_query($connect, "INSERT INTO members (fname, lname, address, city, state, zipcode, email, emailpref, dob, comment)
     VALUES ('$firstname', '$lastname', '$address', '$city', '$state', '$zip', '$email', '$_POST[emailpref]', '$dob', '$comment')");
+    /*$to = "tyler_merrill2011@hotmail.com";
+    $subject = "New Subscriber";
+    $message = "New subscriber information: <br />"
+            //$firstname . "<br />" . $lastname . "<br />" . $address . "<br />" . $city . "<br />" . $state . "<br />" . $zip . "<br />" . $email . "<br />" . $_POST[emailpref] . "<br />" . $dob . "<br /" . $comment;*/
     } else {
         echo'<h2>Error!</h2>
         <p class="error">The following error(s) occurred:<br />';
