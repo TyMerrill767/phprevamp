@@ -244,7 +244,7 @@ div div h2  {
    color: #000000;
 }
 
-.form-container h2 {
+.form-container h2{
     font-size: 18px;
     font-weight: bold;
     margin: 0 0 1em 0;
@@ -323,6 +323,11 @@ div div h2  {
     text-shadow: #ffffff 0 1px 0;
 }
 
+.warning-message{
+    color: #fff;
+    font-size: .9em;
+    text-align: center;
+}
 /*-------------------------- FOOTER STYLES --------------------------*/
 
 .footer  {
