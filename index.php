@@ -180,7 +180,7 @@ $comment = $stripped;
         </div>
 
         <div id= "member1text" class=" container col-md-6 col-md-pull-1">
-            <h2 class="bio"><a name="band"></a>The Band</h2>
+            <h2 id="band" class="bio">The Band</h2>
             <h3>Thomas Bangalter</h3>
             <p><b>Thomas Bangalter</b> is a French electronic musician best known for being one half of the French house music duo Daft Punk, alongside <b>Guy-Manuel de Homem-Christo</b>. He has also recorded and released music as a member of the trio Stardust, the duo Together, and as a solo artist including compositions for the film Irréversible. Thomas Bangalter owns a music label called Roulé. Outside of music production, his credits include film director and cinematographer.</p>
             <p>Thomas was born in Paris, France. He began playing the piano at the age of six. Bangalter stated in a video interview that his parents were strict in keeping up his practice, for which he later thanked them. His father, Daniel Vangarde was a famous songwriter and producer for performers such as the Gibson Brothers, Ottawan, and Sheila B. Devotion.</p>
@@ -202,7 +202,7 @@ $comment = $stripped;
 
 <!--ALBUM DIVS-->
     <div class="container-fluid albums">
-        <h2><a name="albums"></a>Albums</h2>
+        <h2 id="albums">Albums</h2>
         <div class="col-md-3 col-sm-12">
             <img class="img-responsive album-cover" src="_img/_albums/RAM.jpeg" alt="album cover" title="Random Access Memories">
             <h2>Random Access Memories</h2>
@@ -292,7 +292,7 @@ $comment = $stripped;
         </div>
         <div class="col-md-12 form">
             <form action="index.php" class="form-container" method="post">
-                <div><h2  class="form-header">Sign up for our mailing list</h2></div>
+                <div><h2 id="mail" class="form-header">Sign up for our mailing list</h2></div>
                 <p class="form-information">Required fields are marked with an asterisk(*).</p>
 
                 <label class="form-title" for="firstnamefield">*First Name</label>
