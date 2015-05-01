@@ -89,6 +89,10 @@ li a:hover  {
     color: #D4A50A;
     text-decoration: none;
 }
+.login{
+    color: #fff;
+    float: right;
+}
 
 /*-------------------------- JUMBOTRON --------------------------*/
 
@@ -322,7 +326,8 @@ div div h2  {
     color: #8c8c8c;
     text-shadow: #ffffff 0 1px 0;
 }
-
+/*Code by Tyler*/
+/* Fixes form styling when error messages appear */
 .form-information{
     color: #fff;
     font-size: .9em;
