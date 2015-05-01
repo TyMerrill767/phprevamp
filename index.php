@@ -126,11 +126,10 @@ $comment = $stripped;
     mysqli_query($connect, "INSERT INTO members (fname, lname, address, city, state, zipcode, email, emailpref, dob, comment)
     VALUES ('$firstname', '$lastname', '$address', '$city', '$state', '$zip', '$email', '$_POST[emailpref]', '$dob', '$comment')");
     header("location: thank-you-page.php");
-    } else {
-        echo'<p class="error">The following error(s) occurred:<br />';
-        foreach ($errors as $msg) {
-            echo " - $msg<br />\n";
-        }
+        $to = "tyler_merrill2011@hotmail.com";
+        $subject = "New Subscriber";
+        $msg = $firstname;
+        mail($to, $subject, $msg);
     }
 }
 ?>
@@ -280,17 +279,18 @@ $comment = $stripped;
     </div>
 
 <!--MAILING LIST FORM-->
+        <div id="error-area" class="container-fluid">
+        <?php
+            if (!empty($errors)){
+                foreach ($errors as $msg) {
+                    echo "<p class='error form-information'>- $msg</p><br />\n";
+                }
+            } else {
+                 echo "";
+            }
+        ?>
+        </div>
         <div class="col-md-12 form">
-                          this is a test
-                           <?php
-                    if (!empty($errors)){
-                        foreach ($errors as $msg) {
-                            echo "<p class='form-information'>- $msg</p><br />\n";
-                        }
-                    } else {
-                         echo "";
-                    }
-                ?>
             <form action="index.php" class="form-container" method="post">
                 <div><h2  class="form-header">Sign up for our mailing list</h2></div>
                 <p class="form-information">Required fields are marked with an asterisk(*).</p>
