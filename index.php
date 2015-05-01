@@ -1,3 +1,4 @@
+<!--PHP code block to validate, sanitize, and insert data into database upon form submission-->
 <?php
 //Connection to database.
 $connect = mysqli_connect("localhost","admin","instructor","phprediscography");
@@ -279,6 +280,7 @@ $comment = $stripped;
     </div>
 
 <!--MAILING LIST FORM-->
+       <!--Checks for errors in form input, outputs error message if any are found-->
         <div id="error-area" class="container-fluid">
         <?php
             if (!empty($errors)){
@@ -290,6 +292,8 @@ $comment = $stripped;
             }
         ?>
         </div>
+
+        <!--Sign-up form, retains information if errors are found-->
         <div class="col-md-12 form">
             <form action="index.php" class="form-container" method="post">
                 <div><h2 id="mail" class="form-header">Sign up for our mailing list</h2></div>
@@ -338,9 +342,8 @@ $comment = $stripped;
                 </div>
             </form>
 
-
         </div>
-
+    <?php include('includes/footer.php');?>
 </body>
 
 
