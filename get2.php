@@ -1,5 +1,5 @@
 <?php
-			require('mysqli_connect_remote.php');
+			require('mysqli_connect.php');
 			$q = "SELECT Album_Art, Concat(Title, ' ', Release_Date) AS Title, Albums.Album_id AS id, destination, direction, Available.Location, Available.Location2, Available.Location3 FROM Albums INNER JOIN Available ON Albums.Album_id = Available.Album_id";
 			$t = "SELECT Name FROM Songs WHERE Album_id = 1";
 			$b = "SELECT Name FROM Songs WHERE Album_id = 2";

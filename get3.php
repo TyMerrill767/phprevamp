@@ -35,6 +35,17 @@
                         echo '<li>' . $row1['trackname'] . '</li>';
                     }
                }
+
+            echo '<div class="col-small-6 col-med-6 col-lg-4 albumContainer">';
+            echo $row['albumname'] . "<br />";
+               if($row['albumID']==2)
+               {
+                    foreach ($result2 as $row2)
+                    {
+                        //echo $row['albumname'] . "<br />";
+                        echo '<li>' . $row2['trackname'] . '</li>';
+                    }
+               }
         }
     }
 	// Close the database connection
