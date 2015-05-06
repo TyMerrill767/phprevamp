@@ -8,7 +8,7 @@
 	mysql_select_db("phprediscography") or die(mysql_error());
 
 	// SQL query
-	$q = "SELECT DISTINCT *
+	$q = "SELECT DISTINCT albums.albumname, albums.albumID, albums.coverart
     FROM albums
     JOIN tracks
     ON albums.albumID=tracks.albumID";
@@ -21,18 +21,34 @@
     $result2 = mysqli_query($dbcon, $b);
     $result3 = mysqli_query($dbcon, $n);
     $result4 = mysqli_query($dbcon, $r);
-    if ($result)
-    {
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-               if($row['albumID']==1){
-                   echo '<img src='.$row['coverart'] . '>' . '<br />';
-                   echo $row['albumname'] . "<br />";
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+       echo '<img src='.$row['coverart'] . '>' . '<br />';
+       echo $row['albumname'] . "<br />";
 
-                   foreach($result1 as $row1){
-                        echo '<li>' . $row1['trackname'] . '</li>';
-                   }
-               }
+       if($row['albumID']==1){
+           foreach($result1 as $row1){
+                echo '<li>' . $row1['trackname'] . '</li>';
+           }
+        }
+
+        if($row['albumID']==2){
+           foreach($result1 as $row2){
+                echo '<li>' . $row2['trackname'] . '</li>';
+           }
+        }
+
+        if($row['albumID']==3){
+           foreach($result1 as $row3){
+                echo '<li>' . $row3['trackname'] . '</li>';
+           }
+        }
+
+        if($row['albumID']==4){
+           foreach($result1 as $row4){
+                echo '<li>' . $row4['trackname'] . '</li>';
+           }
+        }
     }
 	// Close the database connection
 	mysql_close();
