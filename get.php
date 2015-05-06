@@ -23,30 +23,31 @@
     $result4 = mysqli_query($dbcon, $r);
 
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){//loop through database to get each album
-       echo '<img src='.$row['coverart'] . '>' . '<br />';
-       echo $row['albumname'] . "<br />";
+
+       echo '<img class="img-responsive" src='.$row['coverart'] . '>' . '<br />';
+       echo '<h2>' . $row['albumname'] . "</h2><br />";
 
        if($row['albumID']==1){
            foreach($result1 as $row1){//loop through tracks and output to page
-                echo '<li>' . $row1['trackname'] . '</li>';
+                echo '<p>' . $row1['trackname'] . '</p>';
            }
         }
 
         if($row['albumID']==2){
-           foreach($result1 as $row2){//loop through tracks and output to page
-                echo '<li>' . $row2['trackname'] . '</li>';
+           foreach($result2 as $row2){//loop through tracks and output to page
+                echo '<p>' . $row2['trackname'] . '</p>';
            }
         }
 
         if($row['albumID']==3){
-           foreach($result1 as $row3){//loop through tracks and output to page
-                echo '<li>' . $row3['trackname'] . '</li>';
+           foreach($result3 as $row3){//loop through tracks and output to page
+                echo '<p>' . $row3['trackname'] . '</p>';
            }
         }
 
         if($row['albumID']==4){
-           foreach($result1 as $row4){//loop through tracks and output to page
-                echo '<li>' . $row4['trackname'] . '</li>';
+           foreach($result4 as $row4){//loop through tracks and output to page
+                echo '<p>' . $row4['trackname'] . '</p>';
            }
         }
     }
