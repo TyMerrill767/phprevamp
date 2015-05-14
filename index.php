@@ -204,7 +204,7 @@ $comment = $stripped;
 <!--ALBUM DIVS-->
     <div class="container-fluid albums">
         <h2 id="albums">Albums</h2>
-        <?php include('get.php') ?>
+        <?php include('includes/get.php') ?>
     </div>
 
 <!--MAILING LIST FORM-->
