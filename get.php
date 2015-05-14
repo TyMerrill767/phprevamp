@@ -24,7 +24,7 @@
 
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){//loop through database to get each album
 
-       echo '<img class="img-responsive" src='.$row['coverart'] . '>' . '<br />';
+       echo '<div class="col-md-3 col-sm-12"> <img class="img-responsive" src='.$row['coverart'] . '>' . '<br />';
        echo '<h2>' . $row['albumname'] . "</h2><br />";
 
        if($row['albumID']==1){
@@ -50,6 +50,7 @@
                 echo '<p>' . $row4['trackname'] . '</p>';
            }
         }
+        echo "</div>";
     }
 	// Close the database connection
 	mysql_close();

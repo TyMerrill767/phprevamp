@@ -205,8 +205,7 @@ $comment = $stripped;
     <div class="container-fluid albums">
         <h2 id="albums">Albums</h2>
         <?php include('get.php') ?>
-        <!--<div class="col-md-3 col-sm-12">
-            <img class="img-responsive album-cover" src="_img/_albums/RAM.jpeg" alt="album cover" title="Random Access Memories">
+            <!--<img class="img-responsive album-cover" src="_img/_albums/RAM.jpeg" alt="album cover" title="Random Access Memories">
             <h2>Random Access Memories</h2>
             <p>Give Life Back to Music</p>
             <p>The Game of Love</p>
