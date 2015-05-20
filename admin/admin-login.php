@@ -23,14 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	// Validate the password:
 	if (!empty($_POST['psword'])) {
-			$p = mysqli_real_escape_string($dbcon, $_POST['psword']);
+			$p = mysqli_real_escape_string($dbcon, $_POST['password']);
 	} else {
 	$p = FALSE;
 		echo '<p class="error">You forgot to enter your password.</p>';
 	}
 	if ($e && $p){//if no problems
 // Retrieve the user_id, first_name and user_level for that email/password combination:
-		$q = "SELECT user_id, fname, user_level FROM users WHERE (email='$e' AND psword=SHA1('$p'))";
+		$q = "SELECT name, level FROM admin WHERE (email='$e' AND psword=SHA1('$p'))";
 //run the query and assign it to the variable $result
 		$result = mysqli_query ($dbcon, $q);
 // Count the number of rows that match the email/password combination
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		session_start();
 		$_SESSION = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 $_SESSION['user_level'] = (int) $_SESSION['user_level']; // Ensure that the user level is an integer
-$url = ($_SESSION['user_level'] === 1) ? 'admin-page.php' : 'members-page.php'; // Use a ternary operation to set the URL
+$url = ($_SESSION['user_level'] === 1) ? 'admin-page.php' : 'index.php'; // Use a ternary operation to set the URL
 header('Location: ' . $url); // Make  the browser load either the members’ or the admin page
 exit(); // Cancels the rest of the script.
 	mysqli_free_result($result);
@@ -55,12 +55,12 @@ exit(); // Cancels the rest of the script.
 ?>
 <!-- Display the form fields-->
 <h2>Login</h2>
-<form action="login.php" method="post">
+<form action="index.php" method="post">
 	<p><label class="label" for="email">Email Address:</label>
 	<input id="email" type="text" name="email" size="30" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" > </p>
 	<br>
 	<p><label class="label" for="psword">Password:</label>
-	<input id="psword" type="password" name="psword" size="12" maxlength="12" value="<?php if (isset($_POST['psword'])) echo $_POST['psword']; ?>" ><span>&nbsp;Between 8 and 12 characters.</span></p>
+	<input id="psword" type="password" name="psword" size="12" maxlength="12" value="<?php if (isset($_POST['psword'])) echo $_POST['password']; ?>" ><span>&nbsp;Between 8 and 12 characters.</span></p>
 	<p>&nbsp;</p><p><input id="submit" type="submit" name="submit" value="Login"></p>
 </form><br>
 </div>
