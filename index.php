@@ -156,7 +156,14 @@ $comment = $stripped;
     </head>
 
 <body>
-    <?php include('includes/header.php'); ?>
+    <?php
+    $levelid = isset($_GET['level']);
+    if ($levelid){
+        include('admin/admin-header.php');
+    }else{
+        include('includes/header.php');
+    }
+    ?>
 
     <div class="container-fluid jumbotron main">
         <img class ="jumbo-logo" src="_img/daft-punk-logo_gold.png" alt="logo" title="daft punk logo">
