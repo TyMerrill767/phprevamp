@@ -157,7 +157,8 @@ $comment = $stripped;
 
 <body>
     <?php
-    if ($_GET['level']){
+    $levelid = isset($_GET['level']);
+    if ($levelid){
         include('admin/admin-header.php');
     }else{
         include('includes/header.php');
