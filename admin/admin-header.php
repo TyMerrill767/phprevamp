@@ -2,6 +2,7 @@
     <img class="nav-logo" src="_img/daft-punk-logo_light.png" alt="logo" title="daft punk logo">
     <ul class="login">
         <li><a href="admin-login2.php">Login</a></li>
+        <li><a href=""></a></li>
     </ul>
     <p>Hello, Christy</p>
     <ul>

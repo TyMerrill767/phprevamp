@@ -1,7 +1,7 @@
 <nav class="nav" role="navigation">
     <img class="nav-logo" src="_img/daft-punk-logo_light.png" alt="logo" title="daft punk logo">
     <ul class="login">
-        <li><a href="admin-login2.php">Login</a></li>
+        <li><a href="admin/admin-login.php">Login</a></li>
     </ul>
     <ul>
         <li><a href="#band">The Band</a></li>
