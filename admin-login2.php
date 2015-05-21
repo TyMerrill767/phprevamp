@@ -27,7 +27,7 @@
             echo '<p class="error">You forgot to enter your password.</p>';
         }
         if ($e && $p){//if no problems
-    // Retrieve the user_id, first_name and user_level for that email/password combination:
+    // Retrieve the user_id, first_name and level for that email/password combination:
             $q = "SELECT name, email, level FROM admin WHERE (email='$e' AND password=('$p'))";
     //run the query and assign it to the variable $result
             $result = mysqli_query ($dbcon, $q);
@@ -36,10 +36,10 @@
     // Start the session, fetch the record and insert the three values in an array
             session_start();
             $_SESSION = mysqli_fetch_array ($result, MYSQLI_ASSOC);
-    $_SESSION['user_level'] = (int) $_SESSION['user_level']; // Ensure that the user level is an integer
-    $url = ($_SESSION['user_level'] === 1) ? 'admin-page.php' : 'members-page.php'; // Use a ternary operation to set the URL
+    $_SESSION['level'] = (int) $_SESSION['level']; // Ensure that the user level is an integer
+    $url = ($_SESSION['level'] === 1) ? 'index.php?level=1' : 'index.php'; // Use a ternary operation to set the URL
     header('Location: ' . $url); // Make  the browser load either the members’ or the admin page
-    exit(); // Cancels the rest of the script.
+      exit(); // Cancels the rest of the script.
         mysqli_free_result($result);
         mysqli_close($dbcon);
         } else { // No match was made.
