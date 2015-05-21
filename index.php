@@ -212,6 +212,11 @@ $comment = $stripped;
     <div class="container-fluid albums">
         <h2 id="albums">Albums</h2>
         <?php include('includes/get.php') ?>
+        <form action="includes/search.php" method="post">
+            <label for="album_input">Input album name to search tracks:</label>
+            <input type="text" id="album_input" name="album_input" /><br/>
+            <input type="submit" id="searchbutton" name="submit" value="Search"/>
+        </form>
     </div>
 
 <!--MAILING LIST FORM-->

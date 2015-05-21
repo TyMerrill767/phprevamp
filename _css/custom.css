@@ -327,7 +327,7 @@ div div h2  {
     color: #8c8c8c;
     text-shadow: #ffffff 0 1px 0;
 }
-
+/*Code by Tyler*/
 .form-information{
     color: #fff;
     font-size: .9em;
@@ -346,6 +346,9 @@ div div h2  {
 }
 #error-area{
    background: #000;
+}
+#album_input, #searchbutton{
+    color: #000;
 }
 /*-------------------------- FOOTER STYLES --------------------------*/
 
