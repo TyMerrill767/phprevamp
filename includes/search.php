@@ -8,6 +8,6 @@
 
     $result = mysqli_query($dbcon, $q);
     while($row = mysqli_fetch_array($result)) {
-    echo $row['trackname'] . '</br>';
+    echo '<p>' . $row['trackname'] . '</p></br>';
     }
 ?>
